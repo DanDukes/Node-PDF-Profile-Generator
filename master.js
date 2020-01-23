@@ -1,13 +1,14 @@
-let inquirer = require("inquirer");
-let username;
-let color;
+const inquirer = require("inquirer");
+const fs = require("fs");
+const util = require("util");
+const axios = require("axios");
 
 inquirer
   .prompt([
     {
       type: "input",
       message: "What is your GitHub Profile name?",
-      name: "profile"
+      name: "username"
     },
     {
       type: "list",
@@ -16,8 +17,17 @@ inquirer
       choices: ["Red", "Green", "Blue", "Yellow", "Orange", "Purple"]
     }
   ])
-  .then(function(response) {
-    username = response.profile;
-    color = response.color;
+  .then(function({ username }) {
+    let color = response.color;
+    const queryUrl = `https://api.github.com/users/${username}`;
     console.log(username, color);
+    axios
+      .get(queryUrl)
+      .then(function(res) {
+        console.log(res);
+      })
+      .catch(function(err) {
+        // handle error
+        throw err;
+      });
   });
