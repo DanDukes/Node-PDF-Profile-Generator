@@ -4,6 +4,8 @@ const fs = require("fs");
 const util = require("util");
 const axios = require("axios");
 
+getProfile();
+
 async function getProfile() {
   try {
     const { username } = await inquirer.prompt({
