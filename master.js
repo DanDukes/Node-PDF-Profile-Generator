@@ -1,4 +1,6 @@
-var inquirer = require("inquirer");
+let inquirer = require("inquirer");
+let username;
+let color;
 
 inquirer
   .prompt([
@@ -14,4 +16,8 @@ inquirer
       choices: ["Red", "Green", "Blue", "Yellow", "Orange", "Purple"]
     }
   ])
-  .then(function(response) {});
+  .then(function(response) {
+    username = response.profile;
+    color = response.color;
+    console.log(username, color);
+  });
