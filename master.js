@@ -3,6 +3,8 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 const axios = require("axios");
+const pdf = require("html-pdf");
+const options = { format: "Letter" };
 const writeFileAsync = util.promisify(fs.writeFile);
 
 //Runtime
@@ -20,8 +22,9 @@ async function mainLoop() {
     data.starCount = starCount;
     console.log(data);
     const html = generateHTML(data);
-    writeFileAsync("test.html", html).then(function() {
-      console.log("Successfully wrote to test.html file");
+    pdf.create(html, options).toFile("profile.pdf", function(err, res) {
+      if (err) return console.log(err);
+      console.log(res); // { filename: '/app/businesscard.pdf' }
     });
   } catch (err) {
     console.log(err);
