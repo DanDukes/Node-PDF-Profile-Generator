@@ -73,9 +73,12 @@ async function makePDF() {
       height: 900,
       deviceScaleFactor: 2
     });
-    await page.goto("file://C:/Users/degea/bootcamp/homework_9/test.html", {
-      waitUntil: "networkidle2"
-    });
+    await page.goto(
+      "file://C:/Users/degea/bootcamp/homework_9/Develop/test.html",
+      {
+        waitUntil: "networkidle2"
+      }
+    );
     await page.pdf({
       path: `${profile}.pdf`,
       pageRanges: "1",
