@@ -20,7 +20,7 @@ async function mainLoop() {
     let starCount = starCountData.data.length;
     data.color = color;
     data.starCount = starCount;
-    console.log(data);
+    //console.log(data);
     const html = generateHTML(data);
     writeFileAsync("test.html", html).then(function() {
       console.log("Successfully wrote to test.html file");
