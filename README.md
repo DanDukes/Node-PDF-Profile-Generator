@@ -4,6 +4,7 @@ Node.js Command Line Profile Generator
 Example of Functionality:
 
 https://github.com/DanDukes/homework_9/blob/master/example.gif
+![Gif of usage](https://raw.githubusercontent.com/DanDukes/homework_9/master/example.gif)
 
 ## Description 
 
