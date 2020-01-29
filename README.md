@@ -1,4 +1,4 @@
-# homework_9
+# Node Profile Generator
 Node.js Command Line Profile Generator 
 
 Example of Functionality:
