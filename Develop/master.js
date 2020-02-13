@@ -74,7 +74,7 @@ async function makePDF() {
       deviceScaleFactor: 2
     });
     await page.goto(
-      "file://C:/Users/degea/bootcamp/homework_9/Develop/test.html",
+      "file:"+ __dirname + "/test.html",
       {
         waitUntil: "networkidle2"
       }
